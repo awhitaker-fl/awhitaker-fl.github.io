@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Easter Egg Guides
 ---
 
 # Zombies Easter Egg Hub
