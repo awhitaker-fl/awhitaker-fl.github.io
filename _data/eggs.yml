@@ -6,91 +6,91 @@
 - title: Ascension
   map: Black Ops 1
   url: /eggs/bo1/ascension/
-  image: /assets/images/bo1/ascension.webp
+  image: /assets/images/bo1/ascension/cover.webp
   summary: "Casimir Mechanism / Fly Trap main quest walkthrough."
 
 - title: Call of the Dead (solo)
   map: Black Ops 1
   url: /eggs/bo1/call-of-the-dead-solo/
-  image: /assets/images/bo1/call-of-the-dead/cover.jpg
+  image: /assets/images/bo1/call-of-the-dead-solo/cover.webp
   summary: "Ensemble main quest walkthrough — free George Romero."
 
 - title: Call of the Dead (co-op)
   map: Black Ops 1
   url: /eggs/bo1/call-of-the-dead-co-op/
-  image: /assets/images/bo1/call-of-the-dead/cover.jpg
+  image: /assets/images/bo1/call-of-the-dead-co-op/cover.webp
   summary: "Ensemble main quest walkthrough — free George Romero."
 
 - title: Shangri-La
   map: Black Ops 1
   url: /eggs/bo1/shangri-la/
-  image: /assets/images/bo1/shangri-la/cover.jpg
+  image: /assets/images/bo1/shangri-la/cover.webp
   summary: "Time Travel Will Tell main quest walkthrough."
 
 - title: Moon
   map: Black Ops 1
   url: /eggs/bo1/moon/
-  image: /assets/images/bo1/moon/cover.jpg
+  image: /assets/images/bo1/moon/cover.webp
   summary: "Big Bang Theory main quest walkthrough."
 
 # ---------- Black Ops 2 ----------
 - title: TranZit
   map: Black Ops 2
   url: /eggs/bo2/tranzit/
-  image: /assets/images/bo2/tranzit/cover.jpg
+  image: /assets/images/bo2/tranzit/cover.webp
   summary: "Tower of Babble main quest — Richtofen and Maxis sides."
 
 - title: Die Rise
   map: Black Ops 2
   url: /eggs/bo2/die-rise/
-  image: /assets/images/bo2/die-rise/cover.jpg
+  image: /assets/images/bo2/die-rise/cover.webp
   summary: "High Maintenance main quest — Richtofen and Maxis sides."
 
 - title: Mob of the Dead
   map: Black Ops 2
   url: /eggs/bo2/mob-of-the-dead/
-  image: /assets/images/bo2/mob-of-the-dead/cover.jpg
+  image: /assets/images/bo2/mob-of-the-dead/cover.webp
   summary: "Pop Goes the Weasel main quest walkthrough."
 
 - title: Buried
   map: Black Ops 2
   url: /eggs/bo2/buried/
-  image: /assets/images/bo2/buried/cover.jpg
+  image: /assets/images/bo2/buried/cover.webp
   summary: "Mined Games main quest — Richtofen and Maxis sides."
 
 - title: Origins
   map: Black Ops 2
   url: /eggs/bo2/origins/
-  image: /assets/images/bo2/origins/cover.jpg
+  image: /assets/images/bo2/origins/cover.webp
   summary: "Little Lost Girl main quest walkthrough."
 
 # ---------- Black Ops 3 ----------
 - title: Shadows of Evil
   map: Black Ops 3
   url: /eggs/bo3/shadows-of-evil/
-  image: /assets/images/bo3/shadows-of-evil/cover.jpg
+  image: /assets/images/bo3/shadows-of-evil/cover.webp
   summary: "Apocalypse Averted main quest walkthrough."
 
 - title: Der Eisendrache
   map: Black Ops 3
   url: /eggs/bo3/der-eisendrache/
-  image: /assets/images/bo3/der-eisendrache/cover.jpg
+  image: /assets/images/bo3/der-eisendrache/cover.webp
   summary: "My Brother's Keeper main quest walkthrough."
 
 - title: Zetsubou No Shima
   map: Black Ops 3
   url: /eggs/bo3/zetsubou-no-shima/
-  image: /assets/images/bo3/zetsubou-no-shima/cover.jpg
+  image: /assets/images/bo3/zetsubou-no-shima/cover.webp
   summary: "Ancient Evil main quest walkthrough."
 
 - title: Gorod Krovi
   map: Black Ops 3
   url: /eggs/bo3/gorod-krovi/
-  image: /assets/images/bo3/gorod-krovi/cover.jpg
+  image: /assets/images/bo3/gorod-krovi/cover.webp
   summary: "Love and War main quest walkthrough."
 
 - title: Revelations
   map: Black Ops 3
   url: /eggs/bo3/revelations/
-  image: /assets/images/bo3/revelations/cover.jpg
+  image: /assets/images/bo3/revelations/cover.webp
   summary: "The End... Again — final Aether story main quest walkthrough."
