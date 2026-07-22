@@ -3,6 +3,26 @@
 ---
 @import "{{ site.theme }}";
 
+/* ---------- Header: site title -> home button image ---------- */
+header h1 {
+  margin: 0 0 0.75rem;
+}
+
+header h1 a {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 16 / 9;
+  background-image: url('/assets/images/general/home-button-green-run.webp');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  /* Hide the text but keep it accessible to screen readers */
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 /* ---------- Guide cards (homepage grid) ---------- */
 .guides-grid {
   display: grid;
