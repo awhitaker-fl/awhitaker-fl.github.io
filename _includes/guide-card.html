@@ -1,0 +1,18 @@
+{%- comment -%}
+  Renders a clickable guide card.
+  Usage: {% include guide-card.html egg=egg %}
+{%- endcomment -%}
+<a class="guide-card" href="{{ include.egg.url | relative_url }}">
+  {%- if include.egg.image -%}
+    <div class="guide-card__image" style="background-image: url('{{ include.egg.image | relative_url }}');"></div>
+  {%- else -%}
+    <div class="guide-card__image guide-card__image--placeholder"></div>
+  {%- endif -%}
+  <div class="guide-card__body">
+    <div class="guide-card__map">{{ include.egg.map }}</div>
+    <h3 class="guide-card__title">{{ include.egg.title }}</h3>
+    {%- if include.egg.summary -%}
+      <p class="guide-card__summary">{{ include.egg.summary }}</p>
+    {%- endif -%}
+  </div>
+</a>

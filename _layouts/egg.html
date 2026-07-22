@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article class="egg">
+  <header class="egg__header">
+    <p class="egg__map">{{ page.map }}</p>
+    <h1 class="egg__title">{{ page.title }}</h1>
+    {%- if page.summary -%}
+      <p class="egg__summary">{{ page.summary }}</p>
+    {%- endif -%}
+  </header>
+
+  <div class="egg__content">
+    {{ content }}
+  </div>
+
+  <p class="egg__back"><a href="{{ '/' | relative_url }}">&larr; Back to all guides</a></p>
+</article>
