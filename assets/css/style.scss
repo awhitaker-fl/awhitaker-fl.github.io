@@ -4,6 +4,83 @@
 @import "{{ site.theme }}";
 
 /* ==========================================================
+   Green Run Chalkboard theme
+   Palette:
+     $bg-dark:      #1a1f1c   dark green-black backdrop
+     $bg-panel:     #232a25   slightly lifted panels
+     $ink:          #e8ede6   warm off-white body text
+     $ink-muted:    #a8b0a6   muted secondary text
+     $accent:       #7cb342   toxic green (Green Run)
+     $accent-hover: #9ccc65   lighter toxic green
+     $paper:        #f4ede0   warm off-white card fill (like taped notes)
+     $paper-ink:    #2d2820   dark warm brown text on paper
+     $paper-muted:  #6b6455   muted brown on paper
+     $paper-edge:   #d9cfb8   soft paper border
+   ========================================================== */
+
+body {
+  background-color: #1a1f1c;
+  /* Subtle chalk-scratch grain (very faint) */
+  background-image:
+    radial-gradient(ellipse at top, rgba(124, 179, 66, 0.06) 0%, transparent 55%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.9 0 0 0 0 1 0 0 0 0 0.85 0 0 0 0.05 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+  background-attachment: fixed;
+  color: #e8ede6;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Headings + links inside content */
+h1, h2, h3, h4, h5, h6 {
+  color: #e8ede6;
+}
+
+a {
+  color: #7cb342;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #9ccc65;
+  text-decoration: underline;
+}
+
+/* Muted text on dark bg */
+p, li {
+  color: #cfd6cb;
+}
+
+hr {
+  border-color: rgba(124, 179, 66, 0.25);
+}
+
+blockquote {
+  color: #a8b0a6;
+  border-left-color: #7cb342;
+}
+
+code, pre {
+  background-color: #232a25;
+  color: #cfe0b8;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+pre {
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+/* Header / footer borders in the theme override to accent */
+header {
+  border-bottom-color: rgba(124, 179, 66, 0.35) !important;
+}
+footer {
+  border-top-color: rgba(124, 179, 66, 0.35) !important;
+  color: #a8b0a6;
+}
+footer a {
+  color: #9ccc65;
+}
+
+/* ==========================================================
    Top-banner layout (override minimal theme's sidebar layout)
    ========================================================== */
 
@@ -72,8 +149,8 @@ header h1 a {
 
 header h1 a:hover,
 header h1 a:focus {
-  transform: scale(1.03);
-  filter: brightness(1.1);
+  transform: scale(1.04);
+  filter: brightness(1.1) drop-shadow(0 0 10px rgba(124, 179, 66, 0.35));
 }
 
 /* Hide the theme's auto-added description + "View My GitHub Profile" link. */
@@ -83,11 +160,14 @@ header ul {
   display: none;
 }
 
-/* ---------- Guide cards (homepage grid) ---------- */
+/* ==========================================================
+   Guide cards (homepage grid) — warm paper on the chalkboard
+   ========================================================== */
+
 .guides-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin: 1.5rem 0 2rem;
   padding: 0;
   list-style: none;
@@ -96,21 +176,39 @@ header ul {
 .guide-card {
   display: flex;
   flex-direction: column;
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
-  border-radius: 10px;
+  background: #f4ede0;
+  border: 1px solid #d9cfb8;
+  border-radius: 4px; /* less rounded — more paper-like */
   overflow: hidden;
   text-decoration: none;
-  color: inherit;
-  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  color: #2d2820;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(0, 0, 0, 0.15);
+  transform: rotate(-0.4deg); /* very slight taped-up feel */
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+/* Alternate slight rotation so cards don't all lean the same way */
+.guide-card:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+.guide-card:nth-child(3n) {
+  transform: rotate(-0.7deg);
 }
 
 .guide-card:hover,
 .guide-card:focus {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  border-color: #0969da;
+  transform: translateY(-3px) rotate(0);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.45),
+    0 0 0 2px rgba(124, 179, 66, 0.55);
+  filter: brightness(1.03);
   text-decoration: none;
+  color: #2d2820;
 }
 
 .guide-card__image {
@@ -118,10 +216,11 @@ header ul {
   background-color: #24292f;
   background-size: cover;
   background-position: center;
+  border-bottom: 1px solid #d9cfb8;
 }
 
 .guide-card__image--placeholder {
-  background: linear-gradient(135deg, #24292f 0%, #57606a 100%);
+  background: linear-gradient(135deg, #1a1f1c 0%, #3a4a2f 100%);
 }
 
 .guide-card__body {
@@ -129,26 +228,32 @@ header ul {
 }
 
 .guide-card__map {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #57606a;
+  letter-spacing: 0.08em;
+  color: #6b6455;
   margin: 0 0 0.25rem;
+  font-weight: 600;
 }
 
 .guide-card__title {
   margin: 0 0 0.4rem;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.25;
+  color: #2d2820;
+  font-weight: 700;
 }
 
 .guide-card__summary {
   margin: 0;
   font-size: 0.9rem;
-  color: #57606a;
+  color: #6b6455;
 }
 
-/* ---------- Egg (guide) pages ---------- */
+/* ==========================================================
+   Guide (egg) pages
+   ========================================================== */
+
 .egg__header {
   margin-bottom: 1.5rem;
 }
@@ -156,24 +261,26 @@ header ul {
 .egg__map {
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #57606a;
+  letter-spacing: 0.08em;
+  color: #9ccc65;
   margin: 0 0 0.25rem;
+  font-weight: 600;
 }
 
 .egg__title {
   margin: 0 0 0.5rem;
+  color: #e8ede6;
 }
 
 .egg__summary {
-  color: #57606a;
+  color: #a8b0a6;
   margin: 0;
 }
 
 .step {
   margin: 1.75rem 0 2.25rem;
   padding-top: 1rem;
-  border-top: 1px solid #d0d7de;
+  border-top: 1px solid rgba(124, 179, 66, 0.25);
 }
 
 .step__header {
@@ -190,31 +297,34 @@ header ul {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: #0969da;
-  color: #fff;
-  font-weight: 600;
+  background: #7cb342;
+  color: #1a1f1c;
+  font-weight: 700;
   font-size: 0.95rem;
   flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(124, 179, 66, 0.4);
 }
 
 .step__title {
   margin: 0;
   font-size: 1.35rem;
   line-height: 1.25;
+  color: #e8ede6;
 }
 
 .step__image {
   display: block;
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin: 0.5rem 0 0.75rem;
 }
 
 .egg__back {
   margin-top: 2.5rem;
   padding-top: 1rem;
-  border-top: 1px solid #d0d7de;
+  border-top: 1px solid rgba(124, 179, 66, 0.25);
   font-size: 0.95rem;
 }
+
