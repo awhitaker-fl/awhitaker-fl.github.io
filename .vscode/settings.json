@@ -1,0 +1,9 @@
+{
+  // Jekyll requires `---` front matter at the top of assets/css/style.scss
+  // so Liquid tags are expanded and the SCSS is compiled to CSS.
+  // VS Code's built-in SCSS validator doesn't understand that syntax and
+  // reports false-positive "identifier expected" errors on lines 1-4.
+  // We only have one .scss file in this project, so it's safe to turn
+  // the built-in validator off entirely.
+  "scss.validate": false
+}
