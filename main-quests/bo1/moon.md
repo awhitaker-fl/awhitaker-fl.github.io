@@ -1,9 +1,9 @@
 ---
 layout: egg
-title: Shangri-La
+title: Moon
 map: Black Ops 1
-summary: "Time Travel Will Tell main quest walkthrough."
-permalink: /eggs/bo1/shangri-la/
+summary: "Big Bang Theory main quest walkthrough."
+permalink: /main-quests/bo1/moon/
 ---
 
 {% include step.html n="1" title="Step title here" %}

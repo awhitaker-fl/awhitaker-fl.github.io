@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  {% include head-custom.html %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1 class="site-header__brand">
+        <a href="{{ '/' | relative_url }}" class="site-header__home" aria-label="{{ site.title | default: site.github.repository_name }} — Home">
+          <span class="site-header__home-text">{{ site.title | default: site.github.repository_name }}</span>
+        </a>
+      </h1>
+      <nav class="site-header__nav" aria-label="Primary">
+        <a href="{{ '/main-quests/' | relative_url }}"
+           class="site-header__nav-link {% if page.url contains '/main-quests' %}is-active{% endif %}">Main Quests</a>
+        <a href="{{ '/weapons-and-upgrades/' | relative_url }}"
+           class="site-header__nav-link {% if page.url contains '/weapons-and-upgrades' %}is-active{% endif %}">Weapons and Upgrades</a>
+        <a href="{{ '/free-perks/' | relative_url }}"
+           class="site-header__nav-link {% if page.url contains '/free-perks' %}is-active{% endif %}">Free Perks</a>
+        <a href="{{ '/music/' | relative_url }}"
+           class="site-header__nav-link {% if page.url contains '/music' %}is-active{% endif %}">Music</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="site-main__inner">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>Images © Activision / Treyarch. Fan-made reference site.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+          integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg="
+          crossorigin="anonymous"></script>
+  <script>anchors.add();</script>
+</body>
+</html>
