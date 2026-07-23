@@ -1,29 +1,69 @@
+---
+# Empty front matter is required so Jekyll processes this file and compiles SCSS.
+---
 @import "{{ site.theme }}";
 
-/* ---------- Header: site title -> home button image ---------- */
+/* ==========================================================
+   Sidebar (minimal theme <header>)
+   ========================================================== */
+
+/* Replace the site-title text link with the home-button image. */
 header h1 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
 }
 
 header h1 a {
   display: block;
-  width: 100%;
-  max-width: 260px;
-  aspect-ratio: 16 / 9;
+  width: 200px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
   background-image: url('/assets/images/general/home-button-green-run.webp');
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: center;
   background-size: contain;
-  /* Hide the text but keep it accessible to screen readers */
+  /* Keep the text for screen readers, hide it visually. */
   text-indent: -9999px;
   overflow: hidden;
   white-space: nowrap;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+header h1 a:hover,
+header h1 a:focus {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Hide the theme's auto-added description + "View My GitHub Profile" link.
+   (Description already shows as the page heading; profile link isn't useful
+   for a fan reference site.) */
+header p,
+header p.view,
+header ul {
+  display: none;
+}
+
+/* ==========================================================
+   Layout: widen the content column so cards can flow in a grid
+   (default minimal theme caps <section> at 500px which forces
+   single-column stacking)
+   ========================================================== */
+
+@media screen and (min-width: 961px) {
+  .wrapper {
+    width: 1100px;
+    max-width: calc(100% - 40px);
+  }
+  section {
+    width: calc(100% - 310px); /* sidebar 270px + gap */
+  }
 }
 
 /* ---------- Guide cards (homepage grid) ---------- */
 .guides-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.25rem;
   margin: 1.5rem 0 2rem;
   padding: 0;
