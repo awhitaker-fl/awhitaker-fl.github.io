@@ -4,6 +4,25 @@
 @import "{{ site.theme }}";
 
 /* ==========================================================
+   Reset the minimal theme's plain-tag layout rules.
+   The theme sets `header { float: left; position: fixed; width: 270px }`,
+   `section { float: right; width: 500px }`, and `footer { position: fixed }`
+   which cascade to every <header>/<section>/<footer> on the page — including
+   the nested ones we use inside guide pages (.egg__header, .step__header,
+   .step). That's what causes titles/steps to overlap. Neutralise the plain
+   selectors here; our own class-based rules keep the styling we want.
+   ========================================================== */
+
+header,
+section,
+footer {
+  float: none;
+  position: static;
+  width: auto;
+  padding: 0;
+}
+
+/* ==========================================================
    Green Run Chalkboard theme
    Palette:
      $bg-dark:      #1a1f1c   dark green-black backdrop
@@ -196,14 +215,6 @@ footer a {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-}
-
-/* Neutralise any leftover minimal-theme header/footer/wrapper rules that
-   might otherwise style our new markup. */
-.wrapper,
-body > header:not(.site-header),
-body > footer:not(.site-footer) {
-  all: revert;
 }
 
 /* ==========================================================
